@@ -6,7 +6,7 @@ const EndpointAPI = "https://api.quotable.io/random";
 
 // {"_id":"YylNTIZwjyg2","content":"He who angers you conquers you.","author":"Elizabeth Kenny","tags":["Famous Quotes"],"authorSlug":"elizabeth-kenny","length":31,"dateAdded":"2020-04-15","dateModified":"2023-04-14"}
 
-const TextGenerator = () => {
+const TextGenerator = ({ getParagraph, textImported, setTextImported }) => {
   const [displayText, setDisplayText] = useState("");
 
   const getText = async () => {
@@ -18,16 +18,24 @@ const TextGenerator = () => {
       paragraph = paragraph + " " + new_paragraph;
       setDisplayText(paragraph);
     }
+
+    return paragraph;
+  };
+
+  const sendDataUp = async () => {
+    const value = await getText();
+    getParagraph(value);
+    setTextImported(true);
   };
 
   return (
-    <div>
+    <div className={textImported && "hidden"}>
       <div>
         <article>
           <p>{displayText}</p>
         </article>
       </div>
-      <button onClick={getText} className={styles.btn}>
+      <button onClick={sendDataUp} className={styles.btn}>
         Get Started
       </button>
     </div>
