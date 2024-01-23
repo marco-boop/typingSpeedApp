@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import TextGenerator from "../components/textGenerator/textGenerator";
 import FormInput from "../components/formInput/FormInput";
 import Results from "../components/results/Results";
+import CountdownTimer from "../components/countdownTimer/CountdownTimer";
 
 const HomePage = () => {
   const [text, setText] = useState("this is text");
   const [input, setInput] = useState("this is input from parent");
   const [textImported, setTextImported] = useState(false);
+
+  const [startTime, setStartTime] = useState(false);
+  const [finished, setFinished] = useState(false);
 
   const getParagraph = (paragraph) => {
     setText(paragraph);
@@ -26,6 +30,12 @@ const HomePage = () => {
         setTextImported={setTextImported}
       />
 
+      <CountdownTimer
+        startTime={startTime}
+        setStartTime={setStartTime}
+        setFinished={setFinished}
+      />
+
       <FormInput
         text={text}
         input={input}
@@ -36,7 +46,7 @@ const HomePage = () => {
       {/* <Results text={text} input={input} /> */}
 
       <div>
-        <button>Start Typing</button>
+        <button onClick={() => setStartTime(true)}>Start Typing</button>
       </div>
       <div className="btn-restart hidden">
         <button>Restart</button>
