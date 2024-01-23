@@ -1,5 +1,6 @@
 import React from "react";
 import TextGenerator from "../components/textGenerator/TextGenerator";
+import FormInput from "../components/formInput/FormInput";
 
 const HomePage = () => {
   return (
@@ -11,8 +12,7 @@ const HomePage = () => {
       </div>
 
       <TextGenerator />
-
-      {/* Form Input */}
+      <FormInput />
 
       <div>
         <button>Start Typing</button>
