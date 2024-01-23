@@ -1,0 +1,23 @@
+.container {
+  color: aquamarine;
+}
+
+article {
+  margin: 2rem auto 0;
+  /* margin: top right bottom left */
+  background-color: var(--color-bg-variant);
+  border: 2px solid var(--color-primary);
+  border-radius: 0.25rem;
+  padding: 1rem;
+  max-width: 88%;
+}
+
+article p {
+  color: black;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.btn {
+  margin: 0.7rem;
+}
