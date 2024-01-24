@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TextGenerator from "../components/textGenerator/textGenerator";
+import TextGenerator from "../components/textGenerator/TextGenerator";
 import FormInput from "../components/formInput/FormInput";
 import Results from "../components/results/Results";
 import CountdownTimer from "../components/countdownTimer/CountdownTimer";
