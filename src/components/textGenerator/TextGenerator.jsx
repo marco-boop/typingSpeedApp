@@ -29,7 +29,10 @@ const TextGenerator = ({ getParagraph, textImported, setTextImported }) => {
   };
 
   return (
-    <div className={textImported && "hidden"}>
+    // <div className={textImported && "hidden"}>
+    <div className={textImported ? "hidden" : undefined}>
+      {/* If you used to conditionally omit it with className={condition && value}, pass className={condition ? value : undefined} instead.
+       */}
       <div>
         <article>
           <p>{displayText}</p>

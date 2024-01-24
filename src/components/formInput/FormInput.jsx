@@ -18,7 +18,7 @@ const FormInput = ({ input, text, setInput, textImported }) => {
   });
 
   return (
-    <div className={!textImported && "hidden"}>
+    <div className={!textImported ? "hidden" : undefined}>
       <div className={styles.container}>
         <div className={styles.textDisplay}>
           <h3>{formattedText}</h3>

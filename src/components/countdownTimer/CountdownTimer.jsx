@@ -15,6 +15,10 @@ const CountdownTimer = ({ startTime, setStartTime, setFinished }) => {
     // go read more about this
   }, [startTime, timeLeft]);
 
+  if (timeLeft <= 0) {
+    setFinished(true);
+  }
+
   return (
     <div className={startTime ? "" : "hidden"}>
       <p className={styles.timeText}>Time left: {timeLeft}</p>

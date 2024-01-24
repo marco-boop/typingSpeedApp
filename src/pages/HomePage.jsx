@@ -5,8 +5,8 @@ import Results from "../components/results/Results";
 import CountdownTimer from "../components/countdownTimer/CountdownTimer";
 
 const HomePage = () => {
-  const [text, setText] = useState("this is text");
-  const [input, setInput] = useState("this is input from parent");
+  const [text, setText] = useState("");
+  const [input, setInput] = useState("");
   const [textImported, setTextImported] = useState(false);
 
   const [startTime, setStartTime] = useState(false);
@@ -43,13 +43,18 @@ const HomePage = () => {
         textImported={textImported}
       />
 
-      {/* <Results text={text} input={input} /> */}
+      <Results text={text} input={input} finished={finished} />
 
       <div>
         <button onClick={() => setStartTime(true)}>Start Typing</button>
       </div>
-      <div className="btn-restart hidden">
-        <button>Restart</button>
+      <div className={!finished && "hidden"}>
+        <button
+          onClick={() => window.location.reload(false)}
+          className="btn-restart"
+        >
+          Restart
+        </button>
       </div>
     </div>
   );
